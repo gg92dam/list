@@ -7,7 +7,7 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       padding: 40px;
-      background: linear-gradient(to right, #fff1f1, #ffe3f0);
+      background: linear-gradient(to right, #fff1f7, #f0f4ff);
       color: #111;
     }
     img.logo {
@@ -20,7 +20,7 @@
     h1 {
       text-align: center;
       font-size: 30px;
-      color: #c0392b;
+      color: #d63384;
       margin-bottom: 10px;
     }
     input[type="text"] {
@@ -29,7 +29,7 @@
       padding: 10px;
       font-size: 16px;
       width: 320px;
-      border: 1px solid #ffb6c1;
+      border: 1px solid #bbb;
       border-radius: 8px;
       box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
     }
@@ -38,9 +38,9 @@
       overflow-y: auto;
       margin: 0 auto;
       max-width: 520px;
-      border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
-      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: white;
     }
     table {
       width: 100%;
@@ -49,33 +49,33 @@
     th, td {
       text-align: left;
       padding: 12px 15px;
-      border-bottom: 1px solid #fdd;
+      border-bottom: 1px solid #eee;
     }
     th {
-      background: #ffeef0;
+      background: #f6f6f6;
       cursor: pointer;
       position: sticky;
       top: 0;
       z-index: 1;
     }
     th.sortable:hover {
-      background-color: #ffd6dc;
+      background-color: #eaeaea;
     }
     td.price {
       width: 80px;
       font-weight: bold;
-      color: #e74c3c;
+      color: #444;
     }
     .count {
       text-align: center;
       margin-top: 20px;
       font-size: 14px;
-      color: #c0392b;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <img src="https://stimg.sooplive.co.kr/NORMAL_BBS/0/20529820/64106839755d31439.png" class="logo" alt="박세라">
+  <img src="https://stimg.sooplive.co.kr/NORMAL_BBS/0/20529820/64106839755d31439.png" class="logo" alt="박세라 로고">
   <h1>박세라 최신시그목록표</h1>
   <input type="text" id="searchInput" placeholder="곡 제목으로 검색 (예: Sera up!)">
   <div class="table-container">
@@ -92,192 +92,7 @@
   <div class="count" id="countInfo"></div>
 
   <script>
-    const sigData = `70 귀여워서 미안
-99 히릿
-100 Work
-116 바람피면 D지는 거야
-149 바빠
-150 아파트
-151 진압해
-152 날라리
-153 외모체크
-155 옴브리뉴
-156 Zero two
-158 찔려  
-160 쓸애기
-163 쌔끈빠끈  
-166 마그네틱
-170 무아
-173 핫해  
-176 빛을따라서
-177 치킨바나나
-181 WTF  
-185 Love Shake  
-191 키딩  
-196 Hold up
-197 런웨이
-202 Rebel Heart
-203 I want you
-204 쿵쿵따
-205 햄토리
-206 ㅗ뱅어  
-212 킹받쥬  
-215 야메떼
-218 Whiplash
-221 간바레센빠이
-223 넌 나의 N이되줘
-224 슈퍼그럼요
-225 몸매
-226 오늘만 I love you
-230 팬서비스
-232 미야오
-234 왠지
-237 우주로  
-238 여우
-242 응응  
-248 BDZ  
-252 라라리라라  
-254 슴램덩크
-258 이루리
-262 우유
-263 뱅뱅뱅
-264 100개
-266 솜사탕
-268 Strawberry Rush  
-269 Boogie up  
-275 아헤가오  
-278 매니악
-281 고민중독
-287 핑크레이디
-290 나랑사귈래
-299 나니가스키    
-300 오빠바이러스  
-302 Pink Hoodie
-303 아이스크림
-305 UP  
-311 DOOR  
-319 족소리
-322 바니바니
-324 너와의 모든 지금
-326 이쁜여자  
-332 엘에스디
-334 한마디  
-340 헨따이
-342 누나가 알려줄게
-343 왜요왜요
-344 EDM
-346 눈나  
-348 바닥드라군  
-354 호미들    
-366 주차  
-368 바우지
-374 Like Jennie	
-380 오빠하앙
-388 약속해    
-392 영차  
-406 신세계
-412 피리
-442 둥따다
-447 스텝HLP
-504 오션씨포니
-505 포메
-509 허당박
-529 광대
-544 Too Bad
-549 물쏘다
-550 호영레이블
-552 씨뚜루나뚜루
-553 Fast Cars
-557 또치
-569 애벌레
-577 경경경
-595 굿몽
-598 주녁깅
-674 흐름유지
-709 철민업
-712 와e다
-747 더끼
-777 베네딕트
-827 슈퍼소닉
-1000 개쳐발렸쥬
-1001 로드잭
-1002 아파트vs아파트
-1003 쥬
-1004 LOVE1004
-1006 Not Llike Us
-1007 시그
-1009 전투3
-1011 은유화1
-1014 감나무
-1019 00년생
-1020 호구모오
-1021 JUNU
-1024 영원한편돌이
-1025 앙드로
-1028 헤이즈
-1029 딩섬
-1030 황태자
-1032 힘빠진토깽이
-1034 박세라신호탄
-1035 썸머G
-1036 삼겹구
-1037 다죽
-1039 천국가볼래?
-1040 만개화
-1041 살의리랏다
-1042 부비
-1044 라네트
-1046 네유
-1047 전략적후퇴
-1048 #포람페
-1050 창귀
-1051 커맨더H
-1052 볼팀
-1054 방송볼거없NA
-1055 한량
-1057 RED
-1065 [BB]물개
-1067 커즈:D
-1068 뿡뿡뚱땅
-1069 작은골타
-1070 초월
-1072 충충충
-1073 폼피츠
-1074 촌캉스
-1075 아기뭉멘
-1076 바크콜브
-1077 캐쉬건
-1078 아기푸멘
-1079 터미널
-1080 호구야매?
-1082 좀비
-1083 키다리아저씨
-1084 코비커리
-1085 배틀탄마린
-1087 플진남
-1089 미니빵구
-1090 바비걸
-1091 드러오는문
-1094 종로왕김두한
-1096 시간을구독중
-1097 큰코인러형규
-1098 인생뭐있어?
-1099 람보르기니
-1100 Water
-1101 강남일개미
-1104 날라가는중
-1107 징징쓰v
-1110 레트로시크
-1111 라페라리
-1112 야부리맨
-1117 Spurs7
-1122 카리#
-1124 퀘이샤
-1125 효진
-1127 위대한 진
-1128 ㅅ애리
-1133 산멘
-1134 Sera Up!`;
+    const sigData = `1052 볼팀`;
 
     const sigList = sigData.trim().split('\n').map(line => {
       const [price, ...titleParts] = line.trim().split(' ');
