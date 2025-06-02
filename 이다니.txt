@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이다니 최신 시그 목록</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      align-items: flex-start;
+      padding: 40px;
+      background: linear-gradient(to right, #fff1f7, #f0f4ff);
+      font-family: 'Segoe UI', sans-serif;
+      color: #111;
+    }
+    .sidebar {
+      width: 180px;
+      text-align: center;
+    }
+    .sidebar h2 {
+      font-size: 16px;
+      color: #ff2a7f;
+      margin-bottom: 10px;
+    }
+    .sidebar a {
+      color: #444;
+      text-decoration: none;
+    }
+    .sidebar img {
+      width: 100%;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .sidebar p {
+      font-size: 14px;
+      margin-top: 8px;
+      color: #555;
+    }
+    .wrapper {
+      max-width: 600px;
+      text-align: center;
+    }
+    img.logo {
+      width: 220px;
+      display: block;
+      margin: 0 auto 30px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h1 {
+      font-size: 30px;
+      color: #ff2a7f;
+      margin-bottom: 10px;
+    }
+    input[type="text"] {
+      display: block;
+      margin: 20px auto;
+      padding: 10px;
+      font-size: 16px;
+      width: 320px;
+      border: 1px solid #bbb;
+      border-radius: 8px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .table-container {
+      height: 500px;
+      overflow-y: auto;
+      margin: 0 auto;
+      max-width: 520px;
+      border: 2px solid #ff2a7f; /* 찐핑크 테두리 */
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: white;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 16px;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px 15px;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      background: #f6f6f6;
+      cursor: pointer;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    th.sortable:hover {
+      background-color: #eaeaea;
+    }
+    td.price {
+      width: 80px;
+      font-weight: bold;
+      color: #444;
+    }
+    .count {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>📂 메뉴</h2>
+    <a href="https://www.cnine.kr/excel/signature" target="_blank">
+      <img src="/mnt/data/7728663a02b2e3459.png" alt="시그 링크 이미지">
+      <p>시그영상 보러가기</p>
+    </a>
+  </div>
+
+  <div class="wrapper">
+    <img src="https://stimg.sooplive.co.kr/NORMAL_BBS/0/20529820/5882683d2b376e448.gif" class="logo" alt="이다니 로고">
+    <h1 id="sig">이다니 최신 시그 목록</h1>
+    <input type="text" id="searchInput" placeholder="곡 제목으로 검색 (예: 야부리맨)">
+    <div class="table-container">
+      <table id="sigTable">
+        <thead>
+          <tr>
+            <th class="sortable" id="sortPrice">번호 ▼</th>
+            <th>제목</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div class="count" id="countInfo"></div>
+  </div>
+
+  <script>
+    const sigData = `...전체 목록 여기에 붙여넣기...`;
+
+    const sigList = sigData.trim().split('\n').map(line => {
+      const [price, ...titleParts] = line.trim().split(' ');
+      return { price: parseInt(price), title: titleParts.join(' ') };
+    });
+
+    const tableBody = document.querySelector('#sigTable tbody');
+    const countInfo = document.getElementById('countInfo');
+
+    function renderTable(data) {
+      tableBody.innerHTML = data.map(sig => `
+        <tr>
+          <td class="price">${sig.price}</td>
+          <td>${sig.title}</td>
+        </tr>
+      `).join('');
+      countInfo.textContent = `총 ${data.length.toLocaleString()}개의 곡이 있습니다.`;
+    }
+
+    document.getElementById('searchInput').addEventListener('input', e => {
+      const keyword = e.target.value.toLowerCase();
+      const filtered = sigList.filter(sig => sig.title.toLowerCase().includes(keyword));
+      renderTable(filtered);
+    });
+
+    let ascending = true;
+    document.getElementById('sortPrice').addEventListener('click', () => {
+      ascending = !ascending;
+      const sorted = [...sigList].sort((a, b) => ascending ? a.price - b.price : b.price - a.price);
+      renderTable(sorted);
+      document.getElementById('sortPrice').textContent = ascending ? '번호 ▲' : '번호 ▼';
+    });
+
+    renderTable(sigList);
+  </script>
+</body>
+</html>
