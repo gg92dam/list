@@ -27,7 +27,7 @@
     }
     h1 {
       font-size: 30px;
-      color: #d63384;   /* 예시: SERA 컬러 */
+      color: #d63384;
       margin-bottom: 10px;
     }
     input[type="text"] {
@@ -45,7 +45,7 @@
       overflow-y: auto;
       margin: 0 auto;
       max-width: 520px;
-      border: 2px solid #d63384; /* <== 제목 컬러랑 완전 똑같이! */
+      border: 2px solid #d63384;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       background: white;
@@ -101,6 +101,307 @@
     </div>
     <div class="count" id="countInfo"></div>
   </div>
-  <!-- 이하 생략 -->
+
+  <script>
+    const sigData = `70 귀여워서 미안
+99 히릿
+100 Work
+116 바람피면 D지는 거야
+149 바빠
+150 아파트
+151 진압해
+152 날라리
+153 외모체크
+156 Zero two
+158 찔려   
+160 쓸애기
+163 쌔끈빠끈  
+166 마그네틱
+170 무아
+171 BDZ
+176 빛을따라서
+177 치킨바나나
+181 WTF   
+185 Love Shake  
+191 키딩   
+197 런웨이
+202 Rebel Heart
+203 I want you
+204 쿵쿵따
+205 햄토리 
+206 ㅗ뱅어   
+212 킹받쥬   
+215 야메떼 
+218 Whiplash
+221 간바레센빠이 
+223 넌 나의 N이되줘
+226 오늘만 I love you
+230 팬서비스
+232 미야오
+234 왠지
+237 우주로   
+242 응응   
+252 라라리라라   
+254 슴램덩크
+258 이루리
+263 뱅뱅뱅
+264 100개
+268 Strawberry Rush  
+269 Boogie up   
+281 고민중독
+287 핑크레이디
+290 나랑사귈래 
+299 나니가스키    
+300 오빠바이러스   
+302 Pink Hoodie
+303 아이스크림
+311 DOOR  
+322 바니바니
+324 너와의 모든 지금
+326 이쁜여자   
+332 엘에스디
+334 한마디  
+340 헨따이
+342 누나가 알려줄게
+343 왜요왜요
+344 EDM
+346 눈나  
+348 바닥드라군   
+354 호미들    
+366 주차  
+368 바우지
+374 Like Jennie   
+380 오빠하앙
+388 약속해     
+406 신세계
+412 피리
+434 살아있네
+442 둥따다
+447 스텝HLP
+477 사기캐
+504 오션씨포니
+505 포메
+509 허당박
+518 꿀밤족구
+529 광대
+544 Too Bad
+549 물쏘다
+550 호영레이블
+552 씨뚜루나뚜루
+553 Fast Cars
+557 또치
+569 애벌레
+577 경경경
+595 굿몽
+598 주녁깅
+674 흐름유지
+709 철민업
+712 와e다
+747 더끼
+777 베네딕트
+798 큰치킨바나나
+827 슈퍼소닉
+1000 개쳐발렸쥬
+1001 로드잭
+1003 쥬 
+1004 LOVE1004
+1006 Not Llike Us
+1007 시그
+1008 빵맨
+1009 전투3
+1010 슈가
+1011 어림없지^^
+1012 꿈
+1014 감나무
+1017 Yes!
+1018 꿀밤족구
+1019 00년생
+1020 호구모오
+1021 JUNU
+1022 족구졸려
+1023 사랑한다고
+1024 영원한편돌이 
+1025 앙드로
+1026 역삼동위트
+1028 헤이즈
+1029 딩섬
+1030 황태자
+1032 힘빠진토깽이
+1034 박세라신호탄
+1035 썸머G
+1036 삼겹구
+1037 다죽
+1039 천국가볼래?
+1040 만개화
+1041 살의리랏다 
+1042 부비
+1044 라네트
+1046 네유
+1047 전략적후퇴
+1048 #포람페
+1050 창귀
+1051 커맨더H
+1052 볼팀
+1054 방송볼거없NA
+1055 한량
+1056 참숫
+1057 RED
+1058 오베R
+1065 [BB]물개
+1066 v6_멜로디
+1067 커즈:D
+1068 뿡뿡뚱땅
+1069 작은골타
+1070 초월
+1071 봉지원
+1072 충충충
+1073 폼피츠
+1074 촌캉스
+1075 아기뭉멘
+1076 바크콜브
+1077 캐쉬건
+1078 아기푸멘
+1079 터미널
+1080 호구야매?
+1082 좀비
+1083 키다리아저씨
+1084 코비커리
+1085 배틀탄마린
+1086 방패
+1087 플진남
+1088 v8_멜로디
+1089 미니빵구
+1090 바비걸
+1091 드러오는문
+1092 꾸리형
+1094 종로왕김두한
+1096 시간을구독중
+1097 큰코인러형규
+1098 인생뭐있어?
+1099 람보르기니
+1100 은유화1
+1101 강남일개미
+1102 응이사
+1107 징징쓰v
+1109 강포커
+1110 레트로시크
+1111 라페라리
+1112 야부리맨
+1117 Spurs7
+1118 집중
+1122 카리#
+1124 퀘이샤
+1125 효진
+1127 위대한 진
+1128 ㅅ애리
+1129 원픽
+1133 산멘
+1134 Sera Up!
+1139 호랑수월가
+1147 Unplug
+1150 SOLANA
+1151 시그니엘스
+1155 아로케
+1157 모던닉
+1160 개물소유동
+1164 Lafestar
+1166 Heart
+1167 작은피카츄
+1168 빅보스 뚱땅
+1170 오늘만산다
+1172 STX이철민
+1173 김복덩V
+1174 헤븐샷
+1177 오딘
+1188 c9임
+1189 광팔88 
+1190 기부니
+1200 사탄들렸어
+1209 비글즈 우산
+1211 Sexy Queen  
+1212 Lacrimosa 
+1222 프린세스
+1225 박우신2
+1235 Queens
+1242 스타워킨
+1252 v12_멜로디
+1275 띠멘
+1288 작은예멘
+1299 씨나인
+1303 영삼
+1308 쫄병
+1313 파라노이드
+1410 식이
+1440 무공해
+1444 세멘
+1515 오승환형2↑
+1521 오승환이다   
+1587 싸대기떄리자                    
+1782 Don_t Give Up
+1999 샤넬조로
+2000 핸즈클럽
+2019 킹포커
+2020 큰호구모오
+2024 슈퍼영원한편돌이  
+2025 큰오승환
+2028 큰앙드로
+2044 큰라네트
+2050 쑥대머리
+2057 뭉크뭉
+2067 큰피카츄69
+2069 DOPAMINE69
+2070 큰골타
+2071 대왕자지원
+2074 큰촌캉스
+2078 아쿠아푸멘
+2089 892소닉
+2098 큰쫄병
+2111 겨울왕국
+2112 슈퍼야부리맨
+2152 BIG v12_멜로디
+2444 큰세멘
+2486 로맨틱 멜로디
+2587 큰싸대기떄리자                         
+2888 시아나 
+2911 큰라페
+2957 슈퍼뭉크뭉
+2999 큰예멘
+3069 69어셈블
+5252 v12_멜로디(탱고)`;
+
+    const sigList = sigData.trim().split('\\n').map(line => {
+      const [price, ...titleParts] = line.trim().split(' ');
+      return { price: parseInt(price), title: titleParts.join(' ') };
+    });
+
+    const tableBody = document.querySelector('#sigTable tbody');
+    const countInfo = document.getElementById('countInfo');
+
+    function renderTable(data) {
+      tableBody.innerHTML = data.map(sig => `
+        <tr>
+          <td class="price">${sig.price}</td>
+          <td>${sig.title}</td>
+        </tr>
+      `).join('');
+      countInfo.textContent = `총 ${data.length.toLocaleString()}개의 곡이 있습니다.`;
+    }
+
+    document.getElementById('searchInput').addEventListener('input', e => {
+      const keyword = e.target.value.toLowerCase();
+      const filtered = sigList.filter(sig => sig.title.toLowerCase().includes(keyword));
+      renderTable(filtered);
+    });
+
+    let ascending = true;
+    document.getElementById('sortPrice').addEventListener('click', () => {
+      ascending = !ascending;
+      const sorted = [...sigList].sort((a, b) => ascending ? a.price - b.price : b.price - a.price);
+      renderTable(sorted);
+      document.getElementById('sortPrice').textContent = ascending ? '번호 ▲' : '번호 ▼';
+    });
+
+    renderTable(sigList);
+  </script>
 </body>
 </html>
