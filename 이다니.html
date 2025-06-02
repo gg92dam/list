@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>박세라 최신 시그목록</title>
+  <title>박세라 최신시그목록표</title>
   <style>
     body {
       margin: 0;
@@ -86,7 +86,7 @@
 <body>
   <div class="wrapper">
     <img src="https://stimg.sooplive.co.kr/NORMAL_BBS/0/20529820/64106839755d31439.png" class="logo" alt="박세라 로고">
-    <h1 id="sig">박세라 최신 시그목록</h1>
+    <h1 id="sig">박세라 최신시그목록표</h1>
     <input type="text" id="searchInput" placeholder="곡 제목으로 검색 (예: Sera up)">
     <div class="table-container">
       <table id="sigTable">
@@ -369,10 +369,12 @@
 3069 69어셈블
 5252 v12_멜로디(탱고)`;
 
-    const sigList = sigData.trim().split('\\n').map(line => {
-      const [price, ...titleParts] = line.trim().split(' ');
-      return { price: parseInt(price), title: titleParts.join(' ') };
-    });
+    // 정규표현식으로 첫 번째 숫자(번호)와 그 뒤의 제목을 정확하게 분리
+    const sigList = sigData.trim().split('\n').map(line => {
+      const match = line.trim().match(/^([0-9]+)\\s+(.+)$/);
+      if (!match) return null;
+      return { price: parseInt(match[1]), title: match[2] };
+    }).filter(Boolean);
 
     const tableBody = document.querySelector('#sigTable tbody');
     const countInfo = document.getElementById('countInfo');
