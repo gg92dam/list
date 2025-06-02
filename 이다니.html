@@ -2,20 +2,17 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>박세라 최신시그목록표</title>
+  <title>박세라 최신 시그목록</title>
   <style>
     body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
+      font-family: 'Segoe UI', sans-serif;
       padding: 40px;
       background: linear-gradient(to right, #fff1f7, #f0f4ff);
-      font-family: 'Segoe UI', sans-serif;
       color: #111;
     }
     .wrapper {
       max-width: 600px;
+      margin: 0 auto;
       text-align: center;
     }
     img.logo {
@@ -27,7 +24,7 @@
     }
     h1 {
       font-size: 30px;
-      color: #d63384;
+      color: #ffa6bf;
       margin-bottom: 10px;
     }
     input[type="text"] {
@@ -45,15 +42,15 @@
       overflow-y: auto;
       margin: 0 auto;
       max-width: 520px;
-      border: 2px solid #d63384;
       border-radius: 8px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       background: white;
+      border: 2px solid #ffa6bf; /* ← 여기 테두리 추가, 제목색과 동일 */
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 16px;
+      font-size: 16px; /* ← 글자 키움 */
     }
     th, td {
       text-align: left;
@@ -86,21 +83,22 @@
 <body>
   <div class="wrapper">
     <img src="https://stimg.sooplive.co.kr/NORMAL_BBS/0/20529820/64106839755d31439.png" class="logo" alt="박세라 로고">
-    <h1 id="sig">박세라 최신시그목록표</h1>
+    <h1>박세라 최신 시그목록</h1>
     <input type="text" id="searchInput" placeholder="곡 제목으로 검색 (예: Sera up)">
-    <div class="table-container">
-      <table id="sigTable">
-        <thead>
-          <tr>
-            <th class="sortable" id="sortPrice">번호 ▼</th>
-            <th>제목</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    <div class="count" id="countInfo"></div>
   </div>
+
+  <div class="table-container">
+    <table id="sigTable">
+      <thead>
+        <tr>
+          <th class="sortable" id="sortPrice">번호 ▼</th>
+          <th>제목</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div class="count" id="countInfo"></div>
 
   <script>
     const sigData = `70 귀여워서 미안
@@ -369,12 +367,10 @@
 3069 69어셈블
 5252 v12_멜로디(탱고)`;
 
-    // 정규표현식으로 첫 번째 숫자(번호)와 그 뒤의 제목을 정확하게 분리
     const sigList = sigData.trim().split('\n').map(line => {
-      const match = line.trim().match(/^([0-9]+)\\s+(.+)$/);
-      if (!match) return null;
-      return { price: parseInt(match[1]), title: match[2] };
-    }).filter(Boolean);
+      const [price, ...titleParts] = line.trim().split(' ');
+      return { price: parseInt(price), title: titleParts.join(' ') };
+    });
 
     const tableBody = document.querySelector('#sigTable tbody');
     const countInfo = document.getElementById('countInfo');
