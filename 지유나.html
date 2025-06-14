@@ -7,8 +7,8 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       padding: 40px;
-      background: linear-gradient(120deg, #fff3f8 0%, #f1cfdb 100%);
-      color: #222029;
+      background: #f5ddd0;
+      color: #ff9764;
     }
     .wrapper {
       max-width: 600px;
@@ -20,17 +20,17 @@
       display: block;
       margin: 0 auto 30px auto;
       border-radius: 12px;
-      box-shadow: 0 4px 16px rgba(230, 164, 190, 0.18);
-      border: 1.5px solid #f1cfdb;
+      box-shadow: 0 4px 16px rgba(255, 151, 100, 0.14);
+      border: 1.5px solid #ff9764;
       background: white;
     }
     h1 {
       font-size: 30px;
-      color: #dc8cb6;
+      color: #ff9764;
       margin-bottom: 10px;
       letter-spacing: 1.2px;
       font-weight: 700;
-      text-shadow: 0 2px 12px #f1cfdb55;
+      text-shadow: 0 2px 12px #fff1e8;
     }
     input[type="text"] {
       display: block;
@@ -38,14 +38,15 @@
       padding: 10px;
       font-size: 16px;
       width: 320px;
-      border: 1.5px solid #f1cfdb;
+      border: 1.5px solid #ff9764;
       border-radius: 8px;
-      box-shadow: inset 0 1px 3px rgba(220, 140, 180, 0.10);
-      background: #fff6fa;
+      box-shadow: inset 0 1px 3px rgba(255, 151, 100, 0.10);
+      background: #fff7f2;
+      color: #ff9764;
       transition: border 0.2s;
     }
     input[type="text"]:focus {
-      border-color: #dc8cb6;
+      border-color: #ff9764;
       outline: none;
     }
     .table-container {
@@ -54,52 +55,48 @@
       margin: 0 auto;
       max-width: 520px;
       border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(230, 164, 190, 0.07);
+      box-shadow: 0 2px 12px rgba(255, 151, 100, 0.07);
       background: white;
-      border: 2px solid #f1cfdb;
+      border: 2px solid #ff9764;
     }
     table {
       width: 100%;
       border-collapse: collapse;
       font-size: 16px;
+      color: #ff9764;
     }
     th, td {
       text-align: left;
       padding: 12px 15px;
-      border-bottom: 1px solid #f7e6ef;
+      border-bottom: 1px solid #ffe2d2;
     }
     th {
-      background: #fbe7f2;
+      background: #fff1e8;
       cursor: pointer;
       position: sticky;
       top: 0;
       z-index: 1;
-      color: #c26e9b;
+      color: #ff9764;
       font-weight: bold;
     }
     th.sortable:hover {
-      background-color: #f6d8e4;
+      background-color: #ffe8d7;
     }
-    td.price {
-      width: 80px;
+    td.price, td.song-title {
+      color: #ff9764;
       font-weight: bold;
-      color: #a1466b;
-    }
-    td.song-title {
-      color: #90385d;
-      font-weight: 600;
     }
     .count {
       text-align: center;
       margin-top: 20px;
       font-size: 14px;
-      color: #c48ea8;
+      color: #ff9764;
     }
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <img src="https://stimg.sooplive.co.kr/NORMAL_BBS/0/20529820/8370684d3e6436899.png" class="logo" alt="유나유나 로고">
+    <img src="https://stimg.sooplive.co.kr/NORMAL_BBS/0/20529820/7988684d41865b744.png" class="logo" alt="유나유나 로고">
     <h1>유나유나 최신 시그 목록</h1>
     <input type="text" id="searchInput" placeholder="곡 제목으로 검색 (예: 유나유나)">
   </div>
