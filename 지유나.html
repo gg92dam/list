@@ -83,7 +83,11 @@
     td.price {
       width: 80px;
       font-weight: bold;
-      color: #b55f8c;
+      color: #a1466b;
+    }
+    td.song-title {
+      color: #90385d;
+      font-weight: 600;
     }
     .count {
       text-align: center;
@@ -131,7 +135,7 @@
       tableBody.innerHTML = data.map(sig => `
         <tr>
           <td class="price">${sig.price}</td>
-          <td>${sig.title}</td>
+          <td class="song-title">${sig.title}</td>
         </tr>
       `).join('');
       countInfo.textContent = `총 ${data.length.toLocaleString()}개의 곡이 있습니다.`;
