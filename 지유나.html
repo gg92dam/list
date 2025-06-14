@@ -86,6 +86,14 @@
       color: #ff9764;
       font-weight: bold;
     }
+    .new-badge {
+      color: #ff2222;
+      font-size: 12px;
+      font-weight: bold;
+      margin-right: 7px;
+      letter-spacing: 0.5px;
+      vertical-align: middle;
+    }
     .count {
       text-align: center;
       margin-top: 20px;
@@ -118,6 +126,7 @@
     const sigData = `101 유나야
 102 시그목록
 103 줘
+104 뉴시그
 `;
 
     const sigList = sigData.trim().split('\n').map(line => {
@@ -132,7 +141,10 @@
       tableBody.innerHTML = data.map(sig => `
         <tr>
           <td class="price">${sig.price}</td>
-          <td class="song-title">${sig.title}</td>
+          <td class="song-title">
+            ${sig.price === 104 ? '<span class="new-badge">NEW</span>' : ''}
+            ${sig.title}
+          </td>
         </tr>
       `).join('');
       countInfo.textContent = `총 ${data.length.toLocaleString()}개의 곡이 있습니다.`;
