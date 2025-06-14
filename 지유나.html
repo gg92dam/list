@@ -82,17 +82,28 @@
     th.sortable:hover {
       background-color: #ffe8d7;
     }
-    td.price, td.song-title {
+    td.price {
+      width: 110px;
+      font-weight: bold;
+      color: #ff9764;
+      position: relative;
+      vertical-align: middle;
+    }
+    td.song-title {
       color: #ff9764;
       font-weight: bold;
     }
     .new-badge {
-      color: #ff2222;
-      font-size: 12px;
+      display: inline-block;
+      background: #ff534d;
+      color: #fff;
+      font-size: 13px;
       font-weight: bold;
-      margin-right: 7px;
-      letter-spacing: 0.5px;
+      padding: 1px 9px 1px 8px;
+      border-radius: 999px;
+      margin-left: 8px;
       vertical-align: middle;
+      letter-spacing: 0.5px;
     }
     .count {
       text-align: center;
@@ -123,6 +134,9 @@
   <div class="count" id="countInfo"></div>
 
   <script>
+    // NEW 표시할 번호만 배열에 추가
+    const newList = [104];
+
     const sigData = `101 유나야
 102 시그목록
 103 줘
@@ -140,11 +154,11 @@
     function renderTable(data) {
       tableBody.innerHTML = data.map(sig => `
         <tr>
-          <td class="price">${sig.price}</td>
-          <td class="song-title">
-            ${sig.price === 104 ? '<span class="new-badge">NEW</span>' : ''}
-            ${sig.title}
+          <td class="price">
+            ${sig.price}
+            ${newList.includes(sig.price) ? '<span class="new-badge">New!</span>' : ''}
           </td>
+          <td class="song-title">${sig.title}</td>
         </tr>
       `).join('');
       countInfo.textContent = `총 ${data.length.toLocaleString()}개의 곡이 있습니다.`;
